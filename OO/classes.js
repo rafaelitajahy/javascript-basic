@@ -1,11 +1,17 @@
-function pessoa(nome) {
-  this.nome = nome;
-  this.greeting = function() {
-    console.log("Hi! I'm" + this.nome + ".");
-  };
+// Define uma função construtora para inicializar um novo objeto Point
+function Point(x, y) {
+  this.x = x;
+  this.y = y;
 }
+// Usa uma função construtora com a palavra-chave "new" para criar instâncias
+var p = new Point(1,1);
 
-var pessoa1 = new pessoa("Rafael Itajahy");
+// Define métodos para objetos Point atribuindo-os ao objeto
+// prototype associado à função construtora.
+Point.prototype.r = function(){
+  return Math.sqrt(
+    this.x * this.x + this.y * this.y
+  );
+};
 
-pessoa1.greeting();
-console.log(pessoa1.nome);
+p.r();
